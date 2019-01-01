@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-public class BoardActivity extends AppCompatActivity {
+public class BoardActivity extends AppCompatActivity implements GridFragment.OnItemClickedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +36,11 @@ public class BoardActivity extends AppCompatActivity {
     public void onBigClick(View view){
         ImageView imageView = (ImageView) view;
         imageView.setBackgroundResource(R.drawable.red_border);
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+        //skickas till startActivity för att skicka till motstånadren om det var en träff eller inte
+
     }
 }
